@@ -1,0 +1,685 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "name",
+              "elicitationRequired": true,
+              "type": "AMAZON.FirstName",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.167007735326.437725242806"
+              }
+            },
+            {
+              "name": "weight",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "isGreaterThanOrEqualTo",
+                  "prompt": "Slot.Validation.167007735326.161895671922.1344000708932",
+                  "value": "0"
+                }
+              ],
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.167007735326.161895671922"
+              }
+            },
+            {
+              "name": "height",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "isGreaterThanOrEqualTo",
+                  "prompt": "Slot.Validation.167007735326.1517571772932.204794137415",
+                  "value": "0"
+                }
+              ],
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.167007735326.1517571772932"
+              }
+            },
+            {
+              "name": "condition",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.167007735326.1327444286445.679216492078"
+                }
+              ],
+              "type": "condition",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.167007735326.1327444286445"
+              }
+            },
+            {
+              "name": "user",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.806833380685.1130620173388"
+              }
+            }
+          ],
+          "name": "SaveInformationIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "user",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.983072887023.219442756795",
+                "confirmation": "Confirm.Slot.604831962440.728064192437"
+              }
+            }
+          ],
+          "name": "GetDataIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "weight",
+              "elicitationRequired": true,
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1576603879841.1062483758103"
+              }
+            },
+            {
+              "name": "height",
+              "elicitationRequired": true,
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1576603879841.1104749117488"
+              }
+            },
+            {
+              "name": "condition",
+              "elicitationRequired": true,
+              "type": "condition",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1576603879841.584040266118"
+              }
+            },
+            {
+              "name": "user",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1576603879841.368972671908"
+              }
+            }
+          ],
+          "name": "UpdateInfoIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "user",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1655832258239.247616145721"
+              }
+            }
+          ],
+          "name": "ActivateRoutineIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "user",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.853555977912.605310204526"
+              }
+            }
+          ],
+          "name": "GetProgressIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "condition",
+              "elicitationRequired": true,
+              "type": "condition",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1123605215946.585410480384"
+              }
+            }
+          ],
+          "name": "GetPlanesImcIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "slots": [],
+          "name": "HelloWorldIntent",
+          "samples": [
+            "hola",
+            "como estás",
+            "di hola mundo",
+            "di hola",
+            "hola mundo"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "name",
+              "type": "AMAZON.FirstName",
+              "samples": [
+                "soy {name}",
+                "{name}",
+                "me llamo {name}",
+                "ni nombre es {name}"
+              ]
+            },
+            {
+              "name": "weight",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "peso {weight}",
+                "{weight}",
+                "mi peso es {weight}"
+              ]
+            },
+            {
+              "name": "height",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{height} metros",
+                "mido {height} metros",
+                "{height}",
+                "mido {height}"
+              ]
+            },
+            {
+              "name": "condition",
+              "type": "condition",
+              "samples": [
+                "de condicion fisica estoy  en {condition}",
+                "mi nivel seria {condition}",
+                "{condition}"
+              ]
+            },
+            {
+              "name": "user",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "me gustaria que me llamaran {user}",
+                "mi usuario es {user}",
+                "{user}"
+              ]
+            }
+          ],
+          "name": "SaveInformationIntent",
+          "samples": [
+            "quiero registrarme",
+            "dame de alta",
+            "guarda mi info",
+            "darme de alta",
+            "registrarme",
+            "Quesiera registrarme",
+            "guarda mis datos",
+            "almacena mi informacion",
+            "guarda mi informacion"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "user",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "soy {user}",
+                "mi usuario es {user}",
+                "{user}"
+              ]
+            }
+          ],
+          "name": "GetDataIntent",
+          "samples": [
+            "Me gustaria conocer mi plan",
+            "Me gustaria mi plan",
+            "Quisiera saber mi plan",
+            "dame mis datos",
+            "cual es mi plan",
+            "dame mi plan",
+            "dime mi informacion"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "user",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{user}",
+                "mi usuario es {user}"
+              ]
+            }
+          ],
+          "name": "GetProgressIntent",
+          "samples": [
+            "Cual es mi progreso",
+            "Me gustaria conocer mi progreso",
+            "Quisiera saber mi progreso",
+            "Dime cual es mi progreso",
+            "Dame mi progreso"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "user",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "mi usuario es {user}",
+                "{user}"
+              ]
+            }
+          ],
+          "name": "ActivateRoutineIntent",
+          "samples": [
+            "activar mi rutina",
+            "quiero empezar mi rutina",
+            "iniciar rutina",
+            "quisiera empezar mi rutina",
+            "inicia mi rutina",
+            "activa mi rutina"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "weight",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{weight}",
+                "mi peso es {weight}"
+              ]
+            },
+            {
+              "name": "height",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{height}",
+                "mi estatura es {height}"
+              ]
+            },
+            {
+              "name": "condition",
+              "type": "condition",
+              "samples": [
+                "mi condicion es {condition}",
+                "{condition}"
+              ]
+            },
+            {
+              "name": "user",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "mi usuario es {user}",
+                "{user}"
+              ]
+            }
+          ],
+          "name": "UpdateInfoIntent",
+          "samples": [
+            "quiero cambiar mi plan",
+            "quiero cambiar mi estatura",
+            "quiero cambiar mi peso",
+            "quiero actualizar mi informacion",
+            "actualizar mi informacion"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "condition",
+              "type": "condition",
+              "samples": [
+                "la condicion {condition}",
+                "{condition}"
+              ]
+            }
+          ],
+          "name": "GetPlanesImcIntent",
+          "samples": [
+            "que otros planes existen",
+            "mas rutinas",
+            "existen otras rutinas",
+            "Me gustaria conocer mas rutina",
+            "Qusiera conocer otras rutinas",
+            "que planes de ejercicio tienes",
+            "cuales planes de ejercicio tienes"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "GetRecipes",
+          "samples": [
+            "cuales recetas me recomiendas",
+            "que puedo comer",
+            "que receta me recomiendas",
+            "que receta me recomiendas comer hoy"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "StartCronometro",
+          "samples": [
+            "quiero medir mi tiempo",
+            "empieza mi cronometro",
+            "inicia mi cronometro"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "StopCronometroIntent",
+          "samples": [
+            "detener cronómetro",
+            "para mi tiempo",
+            "para mi cronometro",
+            "deten mi cronometro"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "alto"
+              },
+              "id": "3"
+            },
+            {
+              "name": {
+                "value": "medio"
+              },
+              "id": "2"
+            },
+            {
+              "name": {
+                "value": "bajo"
+              },
+              "id": "1"
+            }
+          ],
+          "name": "condition"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "femenino"
+              },
+              "id": "1"
+            },
+            {
+              "name": {
+                "value": "masculino"
+              },
+              "id": "2"
+            }
+          ],
+          "name": "gender"
+        }
+      ],
+      "invocationName": "mi plan de ejercicios"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "como te llamas"
+          },
+          {
+            "type": "PlainText",
+            "value": "dime tu nombre"
+          },
+          {
+            "type": "PlainText",
+            "value": "cual es tu nombre"
+          }
+        ],
+        "id": "Elicit.Slot.167007735326.437725242806"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "cuanto pesas?"
+          },
+          {
+            "type": "PlainText",
+            "value": "cual es tu peso en kilogramos?"
+          },
+          {
+            "type": "PlainText",
+            "value": "dime tu peso en kilogramos?"
+          }
+        ],
+        "id": "Elicit.Slot.167007735326.161895671922"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Ups, no creo que peses menos de un kilo"
+          }
+        ],
+        "id": "Slot.Validation.167007735326.161895671922.1344000708932"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "cuanto mides en metros?"
+          },
+          {
+            "type": "PlainText",
+            "value": "cual es tu estatura en metros?"
+          }
+        ],
+        "id": "Elicit.Slot.167007735326.1517571772932"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Ups, no creo que enserio estes muy chaparro"
+          }
+        ],
+        "id": "Slot.Validation.167007735326.1517571772932.204794137415"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Escoge cual es tu nivel de condición física para poder ofrecerte un buen plan. Tu nivel sería bajo, medio o alto?"
+          }
+        ],
+        "id": "Elicit.Slot.167007735326.1327444286445"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Ups, solamente se aceptan bajo, medio o alto"
+          }
+        ],
+        "id": "Slot.Validation.167007735326.1327444286445.679216492078"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Ups, solo se puede masculino o femenino"
+          }
+        ],
+        "id": "Slot.Validation.1410341391244.1502583910834.256406060356"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Quien eres?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Cual es tu usuario?"
+          }
+        ],
+        "id": "Elicit.Slot.983072887023.219442756795"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "dime tu usuario"
+          },
+          {
+            "type": "PlainText",
+            "value": "cual es tu usuario?"
+          }
+        ],
+        "id": "Elicit.Slot.1655832258239.247616145721"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "dime tu usuario"
+          },
+          {
+            "type": "PlainText",
+            "value": "cual es tu usuario?"
+          }
+        ],
+        "id": "Elicit.Slot.853555977912.605310204526"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "dime una palabra clave para saber que eres tu, puede ser un apodo único para ti"
+          }
+        ],
+        "id": "Elicit.Slot.806833380685.1130620173388"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{user} es el username correcto?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Estas seguro de que eres {user} ?"
+          }
+        ],
+        "id": "Confirm.Slot.604831962440.728064192437"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "dime tu usuario"
+          }
+        ],
+        "id": "Elicit.Slot.1576603879841.368972671908"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "dime tu peso en kilogramos"
+          }
+        ],
+        "id": "Elicit.Slot.1576603879841.1062483758103"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "dime tu estatura en metros"
+          }
+        ],
+        "id": "Elicit.Slot.1576603879841.1104749117488"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Escoge cual es tu nivel de condición física para poder ofrecerte un buen plan. Tu nivel sería bajo, medio o alto?"
+          }
+        ],
+        "id": "Elicit.Slot.1576603879841.584040266118"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "que condicion quieres ver"
+          }
+        ],
+        "id": "Elicit.Slot.1123605215946.585410480384"
+      }
+    ]
+  }
+}
